@@ -13,5 +13,12 @@
   "tailwindCSS.experimental.classRegex": [
     ["tv\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
   ],
-  "cSpell.words": ["clsx", "duolingo", "lucide", "tailwindcss"]
+  "cSpell.words": [
+    "clsx",
+    "duolingo",
+    "lucide",
+    "nextjs",
+    "tailwindcss",
+    "trpc"
+  ]
 }
