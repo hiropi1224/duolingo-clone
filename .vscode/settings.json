@@ -14,10 +14,12 @@
     ["tv\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
   ],
   "cSpell.words": [
+    "bunx",
     "clsx",
     "duolingo",
     "Leaderboard",
     "lucide",
+    "neondatabase",
     "nextjs",
     "tailwindcss",
     "trpc"
