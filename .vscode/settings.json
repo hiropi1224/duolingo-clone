@@ -21,7 +21,9 @@
     "lucide",
     "neondatabase",
     "nextjs",
+    "sonner",
     "tailwindcss",
-    "trpc"
+    "trpc",
+    "upsert"
   ]
 }
