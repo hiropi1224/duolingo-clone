@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 
+import { Unit } from "~/app/(main)/learn/_components/unit";
 import { FeedWrapper } from "~/components/feed-wrapper";
 import { StickyWrapper } from "~/components/sticky-wrapper";
 import { UserProgress } from "~/components/user-progress";
@@ -33,7 +34,17 @@ export default async function LearnPage() {
       <FeedWrapper>
         <Header title={userProgress.activeCourse.title} />
         {units.map((unit) => (
-          <div key={unit.id}>{JSON.stringify(unit)}</div>
+          <div key={unit.id}>
+            <Unit
+              // id={unit.id}
+              // order={unit.order}
+              title={unit.title}
+              description={unit.description}
+              lessons={unit.lessons}
+              activeLesson={undefined}
+              activeLessonPercentage={0}
+            />
+          </div>
         ))}
       </FeedWrapper>
     </div>
