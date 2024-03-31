@@ -24,6 +24,7 @@
     "sonner",
     "tailwindcss",
     "trpc",
-    "upsert"
+    "upsert",
+    "zustand"
   ]
 }
