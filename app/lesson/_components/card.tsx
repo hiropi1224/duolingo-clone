@@ -58,7 +58,7 @@ export function Card({
     >
       {audio}
       {imageSrc && (
-        <div className="relative mb-4 aspect-square max-h-[80px] w-full lg:max-h-[50px]">
+        <div className="relative mb-4 aspect-square max-h-[80px] w-full lg:max-h-[150px]">
           <Image src={imageSrc} alt={text} fill />
         </div>
       )}
