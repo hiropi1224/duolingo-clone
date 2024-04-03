@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 
 import { ExitModal } from "~/components/modal/exit-modal";
+import { HeartsModal } from "~/components/modal/hearts-modal";
 import { Toaster } from "~/components/ui/sonner";
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default function RootLayout({
         <body className={font.className}>
           <Toaster />
           <ExitModal />
+          <HeartsModal />
           {children}
         </body>
       </html>
