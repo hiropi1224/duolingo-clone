@@ -72,7 +72,7 @@ export function Items({ hearts, points, hasActiveSubscription }: Props) {
           </p>
         </div>
         <Button onClick={onUpgrade} disabled={pending || hasActiveSubscription}>
-          {hasActiveSubscription ? "active" : "upgrade"}
+          {hasActiveSubscription ? "settings" : "upgrade"}
         </Button>
       </div>
     </ul>
