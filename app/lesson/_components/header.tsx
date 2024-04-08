@@ -29,7 +29,7 @@ export function Header({ hearts, percentage, hasActiveSubscription }: Props) {
           className="mr-2"
         />
         {hasActiveSubscription ? (
-          <Infinity className="size-6 stroke-[3]" />
+          <Infinity className="size-6 shrink-0 stroke-[3]" />
         ) : (
           hearts
         )}

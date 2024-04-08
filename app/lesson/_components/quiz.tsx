@@ -11,7 +11,7 @@ import { upsertChallengeProgress } from "~/actions/challenge-progress";
 import { reduceHearts } from "~/actions/user-progress";
 import { QuestionBubble } from "~/app/lesson/_components/question-bubble";
 import { ResultCard } from "~/app/lesson/_components/result-card";
-import { challengeOptions, challenges } from "~/db/schema";
+import { challengeOptions, challenges, userSubscription } from "~/db/schema";
 import { useHeartsModal } from "~/store/use-hearts-modal";
 import { usePracticeModal } from "~/store/use-practice-modal";
 
@@ -27,7 +27,11 @@ type Props = {
   })[];
   initialHearts: number;
   initialPercentage: number;
-  userSubscription: any; // TODO: Replace with subscription DB type
+  userSubscription:
+    | (typeof userSubscription.$inferSelect & {
+        isActive?: boolean;
+      })
+    | null;
 };
 
 export function Quiz({
