@@ -35,13 +35,15 @@ export const getUnits = cache(async () => {
     return [];
   }
 
-  // TODO: Confirm whether order is needed
   const data = await db.query.units.findMany({
+    orderBy: (units, { asc }) => [asc(units.order)],
     where: eq(units.courseId, userProgress.activeCourseId),
     with: {
       lessons: {
+        orderBy: (lessons, { asc }) => [asc(lessons.order)],
         with: {
           challenges: {
+            orderBy: (challenges, { asc }) => [asc(challenges.order)],
             with: {
               challengeProgress: {
                 where: eq(challengeProgress.userId, userId),
@@ -85,7 +87,16 @@ export const getCourses = cache(async () => {
 export const getCourseById = cache(async (courseId: number) => {
   const data = await db.query.courses.findFirst({
     where: eq(courses.id, courseId),
-    // TODO: Populate units and lessons
+    with: {
+      units: {
+        orderBy: (units, { asc }) => [asc(units.order)],
+        with: {
+          lessons: {
+            orderBy: (lesson, { asc }) => [asc(lesson.order)],
+          },
+        },
+      },
+    },
   });
 
   return data;
@@ -122,7 +133,6 @@ export const getCourseProgress = cache(async () => {
   const firstUncompletedLesson = unitsInActiveCourse
     .flatMap((unit) => unit.lessons)
     .find((lesson) => {
-      // TODO: If something does not work, check the last if clause
       return lesson.challenges.some(
         (challenge) =>
           !challenge.challengeProgress ||
@@ -174,7 +184,6 @@ export const getLesson = cache(async (id?: number) => {
   }
 
   const normalizedChallenges = data.challenges.map((challenge) => {
-    // TODO: If something does not work, check the last if clause
     const completed =
       challenge.challengeProgress &&
       challenge.challengeProgress.length > 0 &&
