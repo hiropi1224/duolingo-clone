@@ -3,6 +3,8 @@ import { redirect } from "next/navigation";
 
 import { Items } from "~/app/(main)/shop/_components/items";
 import { FeedWrapper } from "~/components/feed-wrapper";
+import { Promo } from "~/components/promo";
+import { Quests } from "~/components/quests";
 import { StickyWrapper } from "~/components/sticky-wrapper";
 import { UserProgress } from "~/components/user-progress";
 import { getUserProgress, getUserSubscription } from "~/db/queries";
@@ -31,6 +33,8 @@ export default async function ShopPage() {
           points={userProgress.points}
           hasActiveSubscription={isPro}
         />
+        {!isPro && <Promo />}
+        <Quests points={userProgress.points} />
       </StickyWrapper>
       <FeedWrapper>
         <div className="flex w-full flex-col items-center">
