@@ -12,7 +12,8 @@
     "generate": "plop",
     "db:studio": "bunx drizzle-kit studio",
     "db:push": "bunx drizzle-kit push:pg",
-    "db:seed": "bun ./scripts/seed.ts"
+    "db:seed": "bun ./scripts/seed.ts",
+    "db:reset": "bun ./scripts/reset.ts"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.29.9",
@@ -29,7 +30,9 @@
     "lucide-react": "^0.363.0",
     "next": "14.1.4",
     "next-themes": "^0.3.0",
+    "ra-data-simple-rest": "^4.16.15",
     "react": "^18",
+    "react-admin": "^4.16.15",
     "react-circular-progressbar": "^2.1.0",
     "react-confetti": "^6.1.0",
     "react-dom": "^18",
